@@ -1,0 +1,9 @@
+- name: elastic_container
+  docker_container:
+    name: elastic
+    image: "docker.elastic.co/kibana/kibana:{{version_kibana}}"
+    state: present
+    ports:
+      - 5601:5601
+    env:
+      ELASTICSEARCH_HOSTS: http://localhost:9200

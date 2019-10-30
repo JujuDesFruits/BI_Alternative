@@ -1,0 +1,2 @@
+[personal_server]
+am-i-an.unusualperson.com ansible_connection=ssh  ansible_user=jtrijean

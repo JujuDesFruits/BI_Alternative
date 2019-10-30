@@ -1,0 +1,8 @@
+---
+- name: kibana test
+  hosts: personal_server
+  become: yes
+  roles:
+    - role: kibana
+      version_kibana: 7.4.1
+      version_elastic: 7.4.1

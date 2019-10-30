@@ -1,0 +1,12 @@
+- name: elastic_container
+  docker_container:
+    name: elastic
+    image: "docker.elastic.co/elasticsearch/elasticsearch:{{version_elastic}}"
+    state: present
+    ports:
+      - 9200:9200
+      - 9300:9300
+    env:
+      - discovery.type: single-node
+      - xpack.ml.enabled: false
+      - "ES_JAVA_OPTS: -Xms256M -Xmx256M"

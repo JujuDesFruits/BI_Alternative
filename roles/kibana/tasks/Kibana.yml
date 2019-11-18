@@ -1,9 +1,34 @@
-- name: elastic_container
-  docker_container:
-    name: elastic
-    image: "docker.elastic.co/kibana/kibana:{{version_kibana}}"
+- name: update source list
+  file:
+    path: /etc/apt/sources.list.d/kibana.list
+    state: touch
+  register: source
+
+- name: add http package
+  lineinfile:
+    path: /etc/apt/sources.list.d/kibana.list
+    line: 'deb https://packages.elastic.co/kibana/4.6/debian stable main'
+  when: source.diff.before.state == 'absent'
+
+- name: update
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+  when: source.diff.before.state == 'absent'
+
+- name: install kibana
+  apt:
+    name: kibana
     state: present
-    ports:
-      - 5601:5601
-    env:
-      ELASTICSEARCH_HOSTS: http://localhost:9200
+  when: source.diff.before.state == 'absent'
+  notify: kibana_start
+
+
+# ## ALTERNATIVE USING DOCKER ##
+# - name: kibana_container
+#   docker_container:
+#     name: kibana
+#     image: "docker.elastic.co/kibana/kibana:{{version_kibana}}"
+#     state: started
+#     ports:
+#       - 5601:5601

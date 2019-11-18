@@ -1,0 +1,9 @@
+- name: elastic_start
+  service:
+    name: elasticsearch
+    state: start
+
+- name: kibana_start
+  service:
+    name: kibana
+    state: start

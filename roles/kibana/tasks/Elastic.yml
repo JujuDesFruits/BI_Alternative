@@ -26,7 +26,12 @@
     name: elasticsearch
     state: present
   when: source.diff.before.state == 'absent'
-  notify: elasticsearch_start
+
+- name: config
+  template:
+    src: elasticsearch.yml
+    dest: /etc/elasticsearch/elasticsearch.yml
+  notify: elastic_start
 
 # ## ALTERNATIVE USING DOCKER ##
 # - name: elastic_container

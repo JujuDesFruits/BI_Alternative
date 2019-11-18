@@ -21,8 +21,12 @@
     name: kibana
     state: present
   when: source.diff.before.state == 'absent'
-  notify: kibana_start
 
+- name: config
+  template:
+    src: kibana.yml
+    dest: /etc/elasticsearch/kibana.yml
+  notify: kibana_start
 
 # ## ALTERNATIVE USING DOCKER ##
 # - name: kibana_container

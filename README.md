@@ -37,3 +37,11 @@ To start the deployement, copy this command line ([ansible](https://docs.ansible
 ```
 ansible-playbook playbook_test.yml -i TEST --extra-vars "ansible_ssh_pass=$passwd ansible_sudo_pass=$passwd"
 ```
+After that, you have to change password from elasticsearch to enable kibana to link them. To do so, go to **/usr/share/elasticsearch/** then type:
+```
+bin/elasticsearch-setup-passwords auto
+```
+then past the password for kibana on [kibana.yml](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/kibana/templates/kibana.yml) or change the password using the new password on doing this:
+```
+curl -u elastic:<password_elastic> -XPUT 'http://localhost:9200/_xpack/security/user/kibana/_password?pretty' -H 'Content-Type: application/json' -d'{"password" : "<new_password>"}'
+```

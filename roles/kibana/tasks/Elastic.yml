@@ -4,16 +4,16 @@
     state: touch
   register: source
 
-- name: Add GPG key
-  apt_key:
-    url: https://packages.elastic.co/GPG-KEY-elasticsearch
-    state: present
-
 - name: add http package
   lineinfile:
     path: /etc/apt/sources.list.d/elastic-7.x.list
     line: 'deb https://artifacts.elastic.co/packages/7.x/apt stable main'
   when: source.diff.before.state == 'absent'
+
+- name: Add PGP key
+  apt_key:
+    url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    state: present
 
 - name: update
   apt:

@@ -1,5 +1,8 @@
 [personal_server]
 am-i-an.unusualperson.com ansible_connection=ssh  ansible_user=jtrijean
 
-[local_machine]
+[local_server]
 127.0.0.1 ansible_connection=ssh ansible_user=jtrijean
+
+[vagrant_server]
+192.168.56.101 ansible_connection=ssh ansible_user=vagrant

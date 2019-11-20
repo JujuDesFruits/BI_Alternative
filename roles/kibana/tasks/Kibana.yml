@@ -25,7 +25,7 @@
 - name: config
   template:
     src: kibana.yml
-    dest: /etc/elasticsearch/kibana.yml
+    dest: /etc/kibana/kibana.yml
   notify: kibana_start
 
 # ## ALTERNATIVE USING DOCKER ##

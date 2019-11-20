@@ -32,11 +32,14 @@ To complete this project, there is some constraint and steps to follow
 | TABLEAU | Hight | Quote-based | Postgre, MariaDB, Oracle, Hadoop | ? | yes | EN, FR | Drag and drop, mobile ready, data sharing, ... |
 
 ## POC
-To test BI tools, I'm using my own ubuntu server with automatisation deployement (could use docker). Think to uncomment the content of [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml) to test the BI you want.   
-To start the deployement, copy this command line ([ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) is required)
+**The server need [python](https://doc.ubuntu-fr.org/python) in order to receive ansible command**
+To test BI tools, I'm using my own ubuntu server with automatisation deployement with ansible (could use docker). Think to uncomment the content of [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml) to test the BI you want select the server you work on.  
+To start the deployement, copy this command line ([ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) is required on local machin)
 ```
 ansible-playbook playbook_test.yml -i TEST --extra-vars "ansible_ssh_pass=$passwd ansible_sudo_pass=$passwd"
 ```
+---
+##### FOR KIBANA
 After that, you have to change password from elasticsearch to enable kibana to link them. To do so, go to **/usr/share/elasticsearch/** then type:
 ```
 bin/elasticsearch-setup-passwords auto

@@ -48,3 +48,10 @@ then past the password for kibana on [kibana.yml](https://github.com/JujuDesFrui
 ```
 curl -u elastic:<password_elastic> -XPUT 'http://localhost:9200/_xpack/security/user/kibana/_password?pretty' -H 'Content-Type: application/json' -d'{"password" : "<new_password>"}'
 ```
+---
+#### FOR TABLEAU
+First you'll need to download this file [tableau-server.deb](https://downloads.tableau.com/esdalt/2019.1.10/tableau-server-2019-1-10_amd64.deb)from the tableau website. Then copy it to your server
+```
+scp ~/Download/tableau-server-2019-1-10_amd64.deb user@server:~/your_folder/
+```
+Then lunch the playbook.

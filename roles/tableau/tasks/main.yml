@@ -1,0 +1,30 @@
+- name: add pat-repository
+  apt_repository:
+    repo: deb http://archive.ubuntu.com/ubuntu bionic universe
+    state: present
+    codename: bionic
+
+- name: update
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+
+- name: install gdebi-core
+  apt:
+    name: gdebi-core
+    state: present
+
+- name: dowload tableau server
+  get_url:
+    url: https://downloads.tableau.com/esdalt/2019.1.10/tableau-server-2019-1-10_amd64.deb
+    dest: /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb
+
+- name: install tableau server
+  command:
+    cmd: "./gdebi -n /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb"
+    chdir: /usr/share/gdebi/
+
+- name: configure tableau
+  command:
+    cmd: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm --accepteula -f
+    become_user: "{{user_tableau}}"

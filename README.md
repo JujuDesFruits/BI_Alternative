@@ -50,8 +50,4 @@ curl -u elastic:<password_elastic> -XPUT 'http://localhost:9200/_xpack/security/
 ```
 ---
 #### FOR TABLEAU
-First you'll need to download this file [tableau-server.deb](https://downloads.tableau.com/esdalt/2019.1.10/tableau-server-2019-1-10_amd64.deb)from the tableau website. Then copy it to your server
-```
-scp ~/Download/tableau-server-2019-1-10_amd64.deb user@server:~/your_folder/
-```
-Then lunch the playbook.
+First you'll need to download this file [tableau-server.deb](https://downloads.tableau.com/esdalt/2019.1.10/tableau-server-2019-1-10_amd64.deb)from the tableau website and copy it in [roles/tableau/debian_install/](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/tableau/debian_install/). Then start execute the command line ansible.

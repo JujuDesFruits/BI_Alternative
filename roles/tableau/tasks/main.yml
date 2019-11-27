@@ -1,4 +1,4 @@
-- name: add pat-repository
+- name: add apt-repository
   apt_repository:
     repo: deb http://archive.ubuntu.com/ubuntu bionic universe
     state: present
@@ -15,16 +15,27 @@
     state: present
 
 - name: dowload tableau server
-  get_url:
-    url: https://downloads.tableau.com/esdalt/2019.1.10/tableau-server-2019-1-10_amd64.deb
+  copy:
+    src: roles/tableau/debian_install/tableau-server-2019-1-10_amd64.deb
     dest: /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb
 
+
+- name: verify tableau install
+  stat:
+    path: /etc/tableau
+  register: verif
+
+- name: debug
+  debug:
+    var: verif
+    
 - name: install tableau server
   command:
     cmd: "./gdebi -n /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb"
     chdir: /usr/share/gdebi/
-
-- name: configure tableau
-  command:
-    cmd: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm --accepteula -f
-    become_user: "{{user_tableau}}"
+  when: verif.stat.exists == false
+#
+# - name: configure tableau
+#   command: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm --accepteula -f
+#   become_user: "{{user_tableau}}"
+#   when: verif.stat.exists == false

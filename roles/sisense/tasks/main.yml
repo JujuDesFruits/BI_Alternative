@@ -2,3 +2,22 @@
   apt:
     update_cache: yes
     cache_valid_time: 86400 #One day
+
+- name: copy sisense server
+  copy:
+    src: "roles/sisense/debian_install/{{file}}"
+    dest: "/home/{{user_sisense}}/{{file}}"
+
+- name: Unarchive tar file
+  unarchive:
+    src: "/home/{{user_sisense}}/{{file}}"
+    dest: "/home/{{user_sisense}}/"
+    remote_src: yes
+
+- name: config sisense
+  templates:
+    src: single_config.yaml
+    dest: "/home/{{user_sisense}}/sisense-{{sisense_version}}/single_config.yaml"
+
+- name: start sisense server
+  command: echo "Yes" | /home/{{user_sisense}}/sisense-{{sisense_version}}/sisense.sh single_config.yaml

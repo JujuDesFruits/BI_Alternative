@@ -1,2 +1,5 @@
 /roles/tableau/debian_install/*
+/roles/sisense/debian_install/*
 .vagrant
+Vagrantfile
+ubuntu-bionic-18.04-cloudimg-console.log

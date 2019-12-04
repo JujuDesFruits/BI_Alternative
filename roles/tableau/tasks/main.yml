@@ -14,7 +14,7 @@
     name: gdebi-core
     state: present
 
-- name: dowload tableau server
+- name: copy tableau server
   copy:
     src: roles/tableau/debian_install/tableau-server-2019-1-10_amd64.deb
     dest: /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb
@@ -28,7 +28,7 @@
 - name: debug
   debug:
     var: verif
-    
+
 - name: install tableau server
   command:
     cmd: "./gdebi -n /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb"

@@ -61,7 +61,7 @@ Dont forget to open port 8850.
 ---
 
 #### FOR SISENSE
-For this you gonna need to contact directly sisense to receive latest linux archive and your licence. Then copy the tar file in [roles/tableau/debian_install/](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/tableau/debian_install/). You may update [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml) and replace **<your_file_name>** by your own tar name.  
+For this you gonna need to contact directly sisense to receive latest linux archive and your licence. Then copy the tar file in [roles/tableau/debian_install/](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/tableau/debian_install/). You may update [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml), replace **<your_file_name>** by your own tar name and **<sisense_version>** by the version of your sisense licence.  
 Start the playbook. That's it, enjoy!   
 Dont forget to open port 30845
 

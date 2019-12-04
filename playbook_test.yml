@@ -5,13 +5,13 @@
 #   roles:
 #     - role: kibana
 
-- name: tableau test
-  hosts: vagrant_server
-  become: yes
-  roles:
-    - role: postgre
-    - role: tableau
-      user_tableau: <user_tableau>
+# - name: tableau test
+#   hosts: vagrant_server
+#   become: yes
+#   roles:
+#     - role: postgre
+#     - role: tableau
+#       user_tableau: <user_tableau>
 
 # - name: sisense test
 #   hosts: personal_server
@@ -20,3 +20,4 @@
 #     - role: postgre
 #     - role: sisense
 #       file: <your_file_name>
+#       sisense_version: <sisense_version>

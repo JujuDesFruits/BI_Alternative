@@ -38,8 +38,10 @@ To start the deployement, copy this command line ([ansible](https://docs.ansible
 ```
 ansible-playbook playbook_test.yml -i TEST --extra-vars "ansible_ssh_pass=$passwd ansible_sudo_pass=$passwd"
 ```
+
 ---
-##### FOR KIBANA
+
+#### FOR KIBANA
 After executing the command from above, you have to change password from elasticsearch to enable kibana to link them. To do so, go to **/usr/share/elasticsearch/** then type:
 ```
 bin/elasticsearch-setup-passwords auto
@@ -49,13 +51,18 @@ then past the password for kibana on [kibana.yml](https://github.com/JujuDesFrui
 curl -u elastic:<password_elastic> -XPUT 'http://localhost:9200/_xpack/security/user/kibana/_password?pretty' -H 'Content-Type: application/json' -d'{"password" : "<new_password>"}'
 ```
 Dont forget to open port 5601.
+
 ---
+
 #### FOR TABLEAU
 First you'll need to download this file [tableau-server.deb](https://downloads.tableau.com/esdalt/2019.1.10/tableau-server-2019-1-10_amd64.deb)from the tableau website and copy it in [roles/tableau/debian_install/](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/tableau/debian_install/). You may update [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml) and replace **<user_tableau>** by your own user name on your server. Then start execute the command line ansible. That's it, enjoy !
 Dont forget to open port 8850.
+
 ---
+
 #### FOR SISENSE
 For this you gonna need to contact directly sisense to receive latest linux archive and your licence. Then copy the tar file in [roles/tableau/debian_install/](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/tableau/debian_install/). You may update [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml) and replace **<your_file_name>** by your own tar name.  
 Start the playbook. That's it, enjoy!   
 Dont forget to open port 30845
+
 ---

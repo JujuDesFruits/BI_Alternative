@@ -1,3 +1,4 @@
+---
 db_user: admin
-db_name: admin
+db_name: TEST
 db_password: admin

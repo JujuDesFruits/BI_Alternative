@@ -1,3 +1,0 @@
-ENV:
-  - "discovery.type=single-node"
-  - "xpack.ml.enabled=false"

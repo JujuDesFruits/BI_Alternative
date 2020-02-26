@@ -27,7 +27,8 @@ To complete this project, there is some constraint and steps to follow
 | :------------- | :------------- | :------------- | :------------- |:------------- | :------------- |:------------- |:------------- |
 | Kibana | Medium | Open Source | Elastic Search | ? | Yes | EN, FR, SP,... | Data Visualization, Geospatial data, graph exploration, dashboard,... |
 | Sisense | Best BI award | Quote-based | postgre, Mongo, Oracle, hadoop,... | yes | Yes | EN, FR, SP,... | Drag and drop, export to various format, Data Visualization, ...|
-| QlikView | Hight | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | Yes | EN | unusable on linux server |
+| QlikView | medium | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | No | EN | unusable on linux server |
+| Qliksense | Hight | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | Yes | EN | unusable on linux server |
 | SSAS POWERBI | Hight | Quote-based | SQL server | yes | no | EN, FR | unusable on linux server |
 | TABLEAU | Hight | Quote-based | Postgre, MariaDB, Oracle, Hadoop | ? | yes | EN, FR | Drag and drop, mobile ready, data sharing, ... |
 

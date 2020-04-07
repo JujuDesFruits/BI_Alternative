@@ -1,17 +1,17 @@
 ---
-# - name: kibana test
-#   hosts: vagrant_server
-#   become: yes
-#   roles:
-#     - role: kibana
-
-- name: tableau test
+- name: kibana test
   hosts: vagrant_server
   become: yes
   roles:
-    - role: postgre
-    - role: tableau
-      user_tableau: vagrant
+    - role: kibana
+
+# - name: tableau test
+#   hosts: vagrant_server
+#   become: yes
+#   roles:
+#     - role: postgre
+#     - role: tableau
+#       user_tableau: vagrant
 
 # - name: sisense test
 #   hosts: local_server

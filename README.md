@@ -28,7 +28,7 @@ To complete this project, there is some constraint and steps to follow
 | Kibana | Medium | Open Source | Elastic Search | no groupe | Yes | EN, FR | Data Visualization, Geospatial data, graph exploration, dashboard,... |
 | Sisense | Best BI award | Quote-based | postgre, Mongo, Oracle, hadoop,... | yes | Yes | EN, FR | Drag and drop, export to various format, Data Visualization, ...|
 | QlikView | medium | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | No | EN | unusable on linux server |
-| Qliksense | Hight | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | Yes | EN | unusable on linux server |
+| Qlik Sense | Hight | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | Yes | EN | unusable on linux server |
 | SSAS POWERBI | Hight | Quote-based | SQL server | yes | no | EN, FR | unusable on linux server |
 | TABLEAU | Hight | Quote-based | Postgre, MariaDB, Oracle, Hadoop | yes | yes | EN, FR | Drag and drop, mobile ready, data sharing, ... |
 | SAP BO | Low | Quote-based | Postgre, MariaDB, Oracle | yes | yes | EN, FR | Drag and drop, data sharing, lot of users right, ... |
@@ -71,10 +71,23 @@ Dont forget to open port 30845
 
 ## Picture to compare all
 
+#### SAP BO
+![sap_bo.png](./img/sap.png)
+
+#### sisense
 ![sisense.png](./img/sisense.png)
-![sisense.png](./img/sisense.png)
-![sisense.png](./img/sisense.png)
-![sisense.png](./img/sisense.png)
-![sisense.png](./img/sisense.png)
-![sisense.png](./img/sisense.png)
-![sisense.png](./img/sisense.png)
+
+#### qlikview
+![qlikview.png](./img/qlickview.PNG)
+
+#### qlik sense
+![qlicksense.png](./img/qlicksense.PNG)
+
+#### tableau
+![tableau.png](./img/tableau.png)
+
+#### kibana
+![kibana.png](./img/kibana.png)
+
+#### powerbi
+![powerbi.png](./img/powerbi.PNG)

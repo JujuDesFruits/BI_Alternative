@@ -1,5 +1,3 @@
 - include: Elastic.yml
-  when: version_elastic is defined
 
 - include: Kibana.yml
-  when: version_kibana is defined

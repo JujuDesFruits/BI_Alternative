@@ -32,6 +32,6 @@
   when: verif.stat.exists == false
 
 - name: configure tableau
-  command: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm --accepteula
+  command: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm -f --accepteula
   become_user: "{{user_tableau}}"
   when: verif.stat.exists == false

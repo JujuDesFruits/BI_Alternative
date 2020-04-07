@@ -1,6 +1,6 @@
 ---
 # - name: kibana test
-#   hosts: personal_server
+#   hosts: vagrant_server
 #   become: yes
 #   roles:
 #     - role: kibana

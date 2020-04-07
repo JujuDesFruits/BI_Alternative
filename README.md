@@ -13,10 +13,10 @@ To complete this project, there is some constraint and steps to follow
   - [x] Compare them
   - [x] find there requirement
 - [x] Select few solutions
-- [ ] Create Poof Of Concept (POC)
-- [ ] Adopt a solution
-  - [ ] meeting to present works done
-  - [ ] vote the one most appropriate solution
+- [x] Create Poof Of Concept (POC)
+- [x] Adopt a solution
+  - [x] meeting to present works done
+  - [x] vote the one most appropriate solution
 - [ ] Apply the solution
 ---
 
@@ -25,12 +25,13 @@ To complete this project, there is some constraint and steps to follow
 
 | BI name | popularity ranking | License | Consistent Database | Users right | User Friendly | Language | Main Features |
 | :------------- | :------------- | :------------- | :------------- |:------------- | :------------- |:------------- |:------------- |
-| Kibana | Medium | Open Source | Elastic Search | ? | Yes | EN, FR, SP,... | Data Visualization, Geospatial data, graph exploration, dashboard,... |
-| Sisense | Best BI award | Quote-based | postgre, Mongo, Oracle, hadoop,... | yes | Yes | EN, FR, SP,... | Drag and drop, export to various format, Data Visualization, ...|
+| Kibana | Medium | Open Source | Elastic Search | no groupe | Yes | EN, FR | Data Visualization, Geospatial data, graph exploration, dashboard,... |
+| Sisense | Best BI award | Quote-based | postgre, Mongo, Oracle, hadoop,... | yes | Yes | EN, FR | Drag and drop, export to various format, Data Visualization, ...|
 | QlikView | medium | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | No | EN | unusable on linux server |
 | Qliksense | Hight | 15$ per user/month | postgre, Mongo, MYSQL, ... | yes | Yes | EN | unusable on linux server |
 | SSAS POWERBI | Hight | Quote-based | SQL server | yes | no | EN, FR | unusable on linux server |
-| TABLEAU | Hight | Quote-based | Postgre, MariaDB, Oracle, Hadoop | ? | yes | EN, FR | Drag and drop, mobile ready, data sharing, ... |
+| TABLEAU | Hight | Quote-based | Postgre, MariaDB, Oracle, Hadoop | yes | yes | EN, FR | Drag and drop, mobile ready, data sharing, ... |
+| SAP BO | Low | Quote-based | Postgre, MariaDB, Oracle | yes | yes | EN, FR | Drag and drop, data sharing, lot of users right, ... |
 
 ## POC
 **The server need [python](https://doc.ubuntu-fr.org/python) in order to receive ansible command, port 22 open, (8cpu, 16GRam, 50GB for Sisense)**
@@ -63,7 +64,17 @@ Dont forget to open port 8850.
 
 #### FOR SISENSE
 For this you gonna need to contact directly sisense to receive latest linux archive and your licence. Then copy the tar file in [roles/tableau/debian_install/](https://github.com/JujuDesFruits/BI_Alternative/blob/master/roles/tableau/debian_install/). You may update [playbook_test](https://github.com/JujuDesFruits/BI_Alternative/blob/master/playbook_test.yml), replace **<your_file_name>** by your own tar name and **<sisense_version>** by the version of your sisense licence.  
-Start the playbook. That's it, enjoy!   
+Start the playbook.  
 Dont forget to open port 30845
 
 ---
+
+## Picture to compare all
+
+![sisense.png](./img/sisense.png)
+![sisense.png](./img/sisense.png)
+![sisense.png](./img/sisense.png)
+![sisense.png](./img/sisense.png)
+![sisense.png](./img/sisense.png)
+![sisense.png](./img/sisense.png)
+![sisense.png](./img/sisense.png)

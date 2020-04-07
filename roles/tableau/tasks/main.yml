@@ -25,17 +25,13 @@
     path: /etc/tableau
   register: verif
 
-- name: debug
-  debug:
-    var: verif
-
 - name: install tableau server
   command:
     cmd: "./gdebi -n /home/{{user_tableau}}/tableau-server-2019-1-10_amd64.deb"
     chdir: /usr/share/gdebi/
   when: verif.stat.exists == false
-#
-# - name: configure tableau
-#   command: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm --accepteula -f
-#   become_user: "{{user_tableau}}"
-#   when: verif.stat.exists == false
+
+- name: configure tableau
+  command: sudo /opt/tableau/tableau_server/packages/scripts.20191.19.1110.1721/initialize-tsm --accepteula
+  become_user: "{{user_tableau}}"
+  when: verif.stat.exists == false
